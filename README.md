@@ -1,0 +1,2 @@
+# minikube-trail
+minikube
