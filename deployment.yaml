@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ip-port-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ip-port-app
+  template:
+    metadata:
+      labels:
+        app: ip-port-app
+    spec:
+      containers:
+      - name: ip-port-app
+        image: pavithran21/ip-port-app:latest  # Updated image path
+        imagePullPolicy: IfNotPresent  # or Never
+        ports:
+        - containerPort: 5000
